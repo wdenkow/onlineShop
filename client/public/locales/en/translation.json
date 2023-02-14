@@ -1,0 +1,56 @@
+{
+    "logIn": "Log in",
+
+    "lang.ru": "Russian",
+    "lang.en": "English",
+
+    "city.minsk": "Minsk",
+    "city. grodno": "Grodno",
+
+    "delivery.30min": "30 minutes delivery",
+
+    "product.pizza": "Pizza",
+    "product.wings": "Wings",
+    "product.potato": "Potato",
+    "product.bread": "Bread",
+    "product.salads": "Salads",
+    "product.sweets": "Sweets",
+    "product.drinks": "Drinks",
+    "product.sauce": "Sauce",
+    "product.hotDogBoard": "Hot-Dog board",
+    "product.cheeseBoard": "Cheese board",
+    "product.classic": "Classic",
+    "product.thin": "Thin",
+
+    "product.size.small": "Small",
+    "product.size.medium": "Medium",
+    "product.size.big": "Big",
+
+    "product.price": "{{price}} BYN",
+    "product.weight": "{{weight}} g",
+
+    "nav.readMore": "read more",
+    "nav.discountCompaign": "Discount",
+    "nav.news": "News",
+
+    "basket": "{{count}} Cart {{price}} BYN",
+    "basket.showLess": "Show less",
+    "basket.totalPrice": "Total {{price}} BYN",
+    "basket.order": "Order",
+    "inBasket": "Add to cart",
+
+    "filter.popularity": "trending",
+    "filter.categories": "categories",
+
+    "product.meatbollo.title": "MEATBOLLO",
+    "product.meatbollo.composition": "Burger sauce, beef meatballs, cucumbers, mozzarella cheese, chicken, onion, bell pepper",
+
+    "product.fiesta.title": "Fiesta",
+    "product.fiesta.composition": "Cowberry sauce, ranch sauce, chicken, mozzarella cheese, spinach, pear",
+
+    "product.4season.title": "4 SEASONS",
+    "product.4season.composition": "Garlic sauce, honey agaric, tomatoes, pepperoni, feta, pineapple, mozzarella cheese, shrimps",
+
+    "product.bolognese.title": "BOLOGNESE",
+    "product.bolognese.composition": "Ham, beef meatballs, tomatoes, domino's tomato sauce, onion, champignon, mozzarella cheese"
+}

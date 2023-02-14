@@ -1,0 +1,56 @@
+{
+    "logIn": "Войти",
+
+    "lang.ru": "Русский",
+    "lang.en": "Английский",
+
+    "city.minsk": "Минск",
+    "city. grodno": "Гродно",
+
+    "delivery.30min": "30 минут доставка",
+
+    "product.pizza": "Пицца",
+    "product.wings": "Курица",
+    "product.potato": "Картофель",
+    "product.bread": "Хлебцы",
+    "product.salads": "Салаты",
+    "product.sweets": "Десерты",
+    "product.drinks": "Напитки",
+    "product.sauce": "Соусы",
+    "product.hotDogBoard": "Хот-дог борт",
+    "product.cheeseBoard": "Сырный борт",
+    "product.classic": "Классика",
+    "product.thin": "Тонкое",
+
+    "product.size.small": "Маленькая",
+    "product.size.medium": "Средняя",
+    "product.size.big": "Большая",
+
+    "product.price": "{{price}} руб.",
+    "product.weight": "{{weight}} г",
+
+    "nav.readMore": "подробнее",
+    "nav.discountCompaign": "Акции",
+    "nav.news": "Новости",
+
+    "basket": "{{count}} Корзина {{price}} руб",
+    "basket.showLess": "Свернуть карзину",
+    "basket.totalPrice": "Сумма заказа {{price}} руб",
+    "basket.order": "Оформить заказ",
+    "inBasket": "В корзину",
+
+    "filter.popularity": "популярности",
+    "filter.categories": "категориям",
+
+    "product.meatbollo.title": "Митболло",
+    "product.meatbollo.composition": "Митболы из говядины, соус бургер, сыр моцарелла, сладкий перец, курица, лук, огурцы",
+
+    "product.fiesta.title": "Фиеста",
+    "product.fiesta.composition": "Соус брусничный, соус ранч, курица, сыр моцарелла, шпинат, груша",
+
+    "product.4season.title": "4 Сезона",
+    "product.4season.composition": "Соус ранч, опята, томаты, пепперони, фета, ананас, сыр моцарелла, креветки",
+
+    "product.bolognese.title": "Болоньезе",
+    "product.bolognese.composition": "Ветчина, томаты, митболы из говядины, томатный соус, лук, шампиньоны, сыр моцарелла"
+}
