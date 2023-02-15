@@ -29,36 +29,36 @@ export const FOOD_ROUTES: Array<Route> = [
         url: '/pizza',
         uniqueKey: 'pizza-key',
     },
-    {
-        title: 'product.wings',
-        url: '/wings',
-        uniqueKey: 'wings-key',
-    },
-    {
-        title: 'product.potato',
-        url: '/potato',
-        uniqueKey: 'potato-key',
-    },
-    {
-        title: 'product.bread',
-        url: '/bread',
-        uniqueKey: 'bread-key',
-    },
-    {
-        title: 'product.salads',
-        url: '/salads',
-        uniqueKey: 'salads-key',
-    },
-    {
-        title: 'product.sweets',
-        url: '/sweets',
-        uniqueKey: 'sweets-key',
-    },
-    {
-        title: 'product.drinks',
-        url: '/drinks',
-        uniqueKey: 'drinks-key',
-    },
+    // {
+    //     title: 'product.wings',
+    //     url: '/wings',
+    //     uniqueKey: 'wings-key',
+    // },
+    // {
+    //     title: 'product.potato',
+    //     url: '/potato',
+    //     uniqueKey: 'potato-key',
+    // },
+    // {
+    //     title: 'product.bread',
+    //     url: '/bread',
+    //     uniqueKey: 'bread-key',
+    // },
+    // {
+    //     title: 'product.salads',
+    //     url: '/salads',
+    //     uniqueKey: 'salads-key',
+    // },
+    // {
+    //     title: 'product.sweets',
+    //     url: '/sweets',
+    //     uniqueKey: 'sweets-key',
+    // },
+    // {
+    //     title: 'product.drinks',
+    //     url: '/drinks',
+    //     uniqueKey: 'drinks-key',
+    // },
     {
         title: 'product.sauce',
         url: '/sauce',

@@ -52,5 +52,9 @@
     "product.4season.composition": "Соус ранч, опята, томаты, пепперони, фета, ананас, сыр моцарелла, креветки",
 
     "product.bolognese.title": "Болоньезе",
-    "product.bolognese.composition": "Ветчина, томаты, митболы из говядины, томатный соус, лук, шампиньоны, сыр моцарелла"
+    "product.bolognese.composition": "Ветчина, томаты, митболы из говядины, томатный соус, лук, шампиньоны, сыр моцарелла",
+
+    "product.sauce.bbq.title": "BBQ соус",
+    "product.sauce.garlic.title": "Чесночный соус",
+    "product.sauce.cheese.title": "Сырный соус"
 }

@@ -19,6 +19,6 @@ export default makeStyles()((theme) => ({
         },
     },
     container: {
-        paddingBottom: '60px',
+        // paddingBottom: '60px',
     },
 }));

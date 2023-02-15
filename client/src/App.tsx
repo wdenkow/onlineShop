@@ -6,11 +6,9 @@ import MasterPage from './components/MasterPage';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './styles/theme';
 import PizzaPage from './pages/pizza';
-import WingsPage from './pages/wings';
+import SaucePage from './pages/sauce';
 import Basket from './pages/Basket';
 import { PayForm } from './pages/Basket/components/PayForm/PayForm';
-
-console.log('test');
 
 export default function App() {
     return (
@@ -22,8 +20,8 @@ export default function App() {
                         <Route exact path="/pizza">
                             <PizzaPage />
                         </Route>
-                        <Route exact path="/wings">
-                            <WingsPage />
+                        <Route exact path="/sauce">
+                            <SaucePage />
                         </Route>
                         <Route exact path="/basket">
                             <Basket />

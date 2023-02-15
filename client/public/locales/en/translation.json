@@ -52,5 +52,9 @@
     "product.4season.composition": "Garlic sauce, honey agaric, tomatoes, pepperoni, feta, pineapple, mozzarella cheese, shrimps",
 
     "product.bolognese.title": "BOLOGNESE",
-    "product.bolognese.composition": "Ham, beef meatballs, tomatoes, domino's tomato sauce, onion, champignon, mozzarella cheese"
+    "product.bolognese.composition": "Ham, beef meatballs, tomatoes, domino's tomato sauce, onion, champignon, mozzarella cheese",
+
+    "product.sauce.bbq.title": "BBQ sauce",
+    "product.sauce.garlic.title": "Garlic sauce",
+    "product.sauce.cheese.title": "Cheese sauce"
 }

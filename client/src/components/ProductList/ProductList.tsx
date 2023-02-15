@@ -12,7 +12,7 @@ const ProductList = ({ products }: Props) => {
     const { classes } = useStyles();
     return (
         <ul className={classes.productList}>
-            {products.map((item, index) => {
+            {products?.map((item, index) => {
                 return (
                     // <li key={index}>
                     <ProductItem
