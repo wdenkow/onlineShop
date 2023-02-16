@@ -7,214 +7,214 @@ import { IAdditionalProduct, IProductItem, ISelectOption, ITabPanel } from './in
 import HotDogBoard from '../assets/images/products/additionalProducs/hot-dog-board.png';
 import CheeseBoard from '../assets/images/products/additionalProducs/cheese-board.png';
 
-export const pizzas: Array<IProductItem> = [
-    {
-        id: 1,
-        imageUrl: Fiesta,
-        title: 'product.fiesta.title',
-        composition: 'product.fiesta.composition',
-        category: 'premium',
-        size: 'medium',
-        type: 'classic',
-        productInfo: {
-            small: {
-                classic: {
-                    price: 20.99,
-                    weight: '370',
-                },
-            },
-            medium: {
-                classic: {
-                    price: 28.49,
-                    weight: '545',
-                },
-                thin: {
-                    price: 28.49,
-                    weight: '360',
-                },
-                'hot-dog': {
-                    price: 35.48,
-                    weight: '565',
-                },
-                'cheese-board': {
-                    price: 34.48,
-                    weight: '510',
-                },
-            },
-            big: {
-                classic: {
-                    price: 32.49,
-                    weight: '845',
-                },
-                thin: {
-                    price: 32.49,
-                    weight: '570',
-                },
-                'hot-dog': {
-                    price: 39.48,
-                    weight: '860',
-                },
-                'cheese-board': {
-                    price: 34.48,
-                    weight: '780',
-                },
-            },
-        },
-    },
-    {
-        id: 2,
-        imageUrl: Mitbollo,
-        title: 'product.meatbollo.title',
-        composition: 'product.meatbollo.composition',
-        category: 'premium',
-        size: 'medium',
-        type: 'classic',
-        productInfo: {
-            small: {
-                classic: {
-                    price: 20.99,
-                    weight: '400',
-                },
-            },
-            medium: {
-                classic: {
-                    price: 28.49,
-                    weight: '605',
-                },
-                thin: {
-                    price: 28.49,
-                    weight: '430',
-                },
-                'hot-dog': {
-                    price: 35.48,
-                    weight: '635',
-                },
-                'cheese-board': {
-                    price: 34.48,
-                    weight: '560',
-                },
-            },
-            big: {
-                classic: {
-                    price: 32.49,
-                    weight: '930',
-                },
-                thin: {
-                    price: 32.49,
-                    weight: '620',
-                },
-                'hot-dog': {
-                    price: 39.48,
-                    weight: '935',
-                },
-                'cheese-board': {
-                    price: 34.48,
-                    weight: '870',
-                },
-            },
-        },
-    },
-    {
-        id: 3,
-        imageUrl: FourSeasons,
-        title: 'product.4season.title',
-        composition: 'product.4season.composition',
-        category: 'premium',
-        size: 'medium',
-        type: 'classic',
-        productInfo: {
-            medium: {
-                classic: {
-                    price: 28.49,
-                    weight: '715',
-                },
-                thin: {
-                    price: 28.49,
-                    weight: '400',
-                },
-                'hot-dog': {
-                    price: 35.48,
-                    weight: '760',
-                },
-                'cheese-board': {
-                    price: 34.48,
-                    weight: '550',
-                },
-            },
-            big: {
-                classic: {
-                    price: 32.49,
-                    weight: '815',
-                },
-                thin: {
-                    price: 32.49,
-                    weight: '540',
-                },
-                'hot-dog': {
-                    price: 39.48,
-                    weight: '885',
-                },
-                'cheese-board': {
-                    price: 34.48,
-                    weight: '790',
-                },
-            },
-        },
-    },
-    {
-        id: 4,
-        imageUrl: Bolonieze,
-        title: 'product.bolognese.title',
-        composition: 'product.bolognese.composition',
-        category: 'favorite',
-        size: 'medium',
-        type: 'classic',
-        productInfo: {
-            small: {
-                classic: {
-                    price: 18.49,
-                    weight: '475',
-                },
-            },
-            medium: {
-                classic: {
-                    price: 25.49,
-                    weight: '680',
-                },
-                thin: {
-                    price: 25.49,
-                    weight: '500',
-                },
-                'hot-dog': {
-                    price: 32.48,
-                    weight: '690',
-                },
-                'cheese-board': {
-                    price: 31.48,
-                    weight: '655',
-                },
-            },
-            big: {
-                classic: {
-                    price: 29.49,
-                    weight: '1060',
-                },
-                thin: {
-                    price: 29.49,
-                    weight: '725',
-                },
-                'hot-dog': {
-                    price: 36.48,
-                    weight: '1050',
-                },
-                'cheese-board': {
-                    price: 35.48,
-                    weight: '945',
-                },
-            },
-        },
-    },
-];
+// export const pizzas: Array<IProductItem> = [
+//     {
+//         id: 1,
+//         imageUrl: Fiesta,
+//         title: 'product.fiesta.title',
+//         composition: 'product.fiesta.composition',
+//         category: 'premium',
+//         size: 'medium',
+//         type: 'classic',
+//         productInfo: {
+//             small: {
+//                 classic: {
+//                     price: 20.99,
+//                     weight: '370',
+//                 },
+//             },
+//             medium: {
+//                 classic: {
+//                     price: 28.49,
+//                     weight: '545',
+//                 },
+//                 thin: {
+//                     price: 28.49,
+//                     weight: '360',
+//                 },
+//                 'hot-dog': {
+//                     price: 35.48,
+//                     weight: '565',
+//                 },
+//                 'cheese-board': {
+//                     price: 34.48,
+//                     weight: '510',
+//                 },
+//             },
+//             big: {
+//                 classic: {
+//                     price: 32.49,
+//                     weight: '845',
+//                 },
+//                 thin: {
+//                     price: 32.49,
+//                     weight: '570',
+//                 },
+//                 'hot-dog': {
+//                     price: 39.48,
+//                     weight: '860',
+//                 },
+//                 'cheese-board': {
+//                     price: 34.48,
+//                     weight: '780',
+//                 },
+//             },
+//         },
+//     },
+//     {
+//         id: 2,
+//         imageUrl: Mitbollo,
+//         title: 'product.meatbollo.title',
+//         composition: 'product.meatbollo.composition',
+//         category: 'premium',
+//         size: 'medium',
+//         type: 'classic',
+//         productInfo: {
+//             small: {
+//                 classic: {
+//                     price: 20.99,
+//                     weight: '400',
+//                 },
+//             },
+//             medium: {
+//                 classic: {
+//                     price: 28.49,
+//                     weight: '605',
+//                 },
+//                 thin: {
+//                     price: 28.49,
+//                     weight: '430',
+//                 },
+//                 'hot-dog': {
+//                     price: 35.48,
+//                     weight: '635',
+//                 },
+//                 'cheese-board': {
+//                     price: 34.48,
+//                     weight: '560',
+//                 },
+//             },
+//             big: {
+//                 classic: {
+//                     price: 32.49,
+//                     weight: '930',
+//                 },
+//                 thin: {
+//                     price: 32.49,
+//                     weight: '620',
+//                 },
+//                 'hot-dog': {
+//                     price: 39.48,
+//                     weight: '935',
+//                 },
+//                 'cheese-board': {
+//                     price: 34.48,
+//                     weight: '870',
+//                 },
+//             },
+//         },
+//     },
+//     {
+//         id: 3,
+//         imageUrl: FourSeasons,
+//         title: 'product.4season.title',
+//         composition: 'product.4season.composition',
+//         category: 'premium',
+//         size: 'medium',
+//         type: 'classic',
+//         productInfo: {
+//             medium: {
+//                 classic: {
+//                     price: 28.49,
+//                     weight: '715',
+//                 },
+//                 thin: {
+//                     price: 28.49,
+//                     weight: '400',
+//                 },
+//                 'hot-dog': {
+//                     price: 35.48,
+//                     weight: '760',
+//                 },
+//                 'cheese-board': {
+//                     price: 34.48,
+//                     weight: '550',
+//                 },
+//             },
+//             big: {
+//                 classic: {
+//                     price: 32.49,
+//                     weight: '815',
+//                 },
+//                 thin: {
+//                     price: 32.49,
+//                     weight: '540',
+//                 },
+//                 'hot-dog': {
+//                     price: 39.48,
+//                     weight: '885',
+//                 },
+//                 'cheese-board': {
+//                     price: 34.48,
+//                     weight: '790',
+//                 },
+//             },
+//         },
+//     },
+//     {
+//         id: 4,
+//         imageUrl: Bolonieze,
+//         title: 'product.bolognese.title',
+//         composition: 'product.bolognese.composition',
+//         category: 'favorite',
+//         size: 'medium',
+//         type: 'classic',
+//         productInfo: {
+//             small: {
+//                 classic: {
+//                     price: 18.49,
+//                     weight: '475',
+//                 },
+//             },
+//             medium: {
+//                 classic: {
+//                     price: 25.49,
+//                     weight: '680',
+//                 },
+//                 thin: {
+//                     price: 25.49,
+//                     weight: '500',
+//                 },
+//                 'hot-dog': {
+//                     price: 32.48,
+//                     weight: '690',
+//                 },
+//                 'cheese-board': {
+//                     price: 31.48,
+//                     weight: '655',
+//                 },
+//             },
+//             big: {
+//                 classic: {
+//                     price: 29.49,
+//                     weight: '1060',
+//                 },
+//                 thin: {
+//                     price: 29.49,
+//                     weight: '725',
+//                 },
+//                 'hot-dog': {
+//                     price: 36.48,
+//                     weight: '1050',
+//                 },
+//                 'cheese-board': {
+//                     price: 35.48,
+//                     weight: '945',
+//                 },
+//             },
+//         },
+//     },
+// ];
 
 export const ADDITIONAL_PRODUCTS: Array<IAdditionalProduct> = [
     {

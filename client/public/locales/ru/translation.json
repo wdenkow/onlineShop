@@ -9,6 +9,15 @@
 
     "delivery.30min": "30 минут доставка",
 
+    "footer.clientsPerMons": "Клиентов в месяц",
+    "footer.ourShops": "Пиццерии",
+    "footer.ourShopsInCountries": "Страны",
+    "footer.delivery": "Доставляем",
+    "footer.openingTime": "Время работы пиццерий",
+
+    "basket.checkout": "Оформление заказа",
+    "basket.orderDetails": "Ваш заказ",
+
     "product.pizza": "Пицца",
     "product.wings": "Курица",
     "product.potato": "Картофель",

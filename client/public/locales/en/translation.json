@@ -9,6 +9,15 @@
 
     "delivery.30min": "30 minutes delivery",
 
+    "footer.clientsPerMons": "Clients per month",
+    "footer.ourShops": "Restaurants in Belarus",
+    "footer.ourShopsInCountries": "Countries",
+    "footer.delivery": "Delivery",
+    "footer.openingTime": "Opening hours",
+
+    "basket.checkout": "Checkout",
+    "basket.orderDetails": "Order details",
+
     "product.pizza": "Pizza",
     "product.wings": "Wings",
     "product.potato": "Potato",
