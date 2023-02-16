@@ -14,7 +14,7 @@ const Footer = () => {
         // TODO chech styles for Footer
         <footer className={classes.footer}>
             <FooterInfoBlock blockItems={FOOTER_INFO_ITEMS} />
-            <FooterNavigationBlock navItems={FOOTER_NAV_ITEMS} />
+            {/* <FooterNavigationBlock navItems={FOOTER_NAV_ITEMS} /> */}
             <FoodNavigation navItems={FOOD_ROUTES} isShowBorder />
             <div className={'payments'}></div>
         </footer>

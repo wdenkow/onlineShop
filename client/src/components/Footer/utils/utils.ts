@@ -17,26 +17,26 @@ export const FOOTER_INFO_ITEMS: IFooterInfoItem[] = [
     {
         image: PeopleAlt,
         title: '270 000',
-        description: 'Клиентов в месяц',
+        description: 'footer.clientsPerMons',
     },
     {
         image: Map,
         title: '33',
-        description: 'Пиццерии отрыто',
+        description: 'footer.ourShops',
     },
     {
         image: Public,
         title: '93',
-        description: 'Страны',
+        description: 'footer.ourShopsInCountries',
     },
     {
         image: SupportAgent,
         title: '24/7',
-        description: 'Доставляем',
+        description: 'footer.delivery',
     },
     {
         image: HistoryToggleOff,
         title: '11:00-23:00',
-        description: 'Время работы пиццерии',
+        description: 'footer.openingTime',
     },
 ];
