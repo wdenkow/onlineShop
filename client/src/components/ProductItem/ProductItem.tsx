@@ -27,9 +27,9 @@ const ProductItem = (product: IProductItem) => {
     const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false);
     const [counter, setCounter] = useState<number>(0);
 
-    const { id, imageUrl, title, composition, productInfo } = product;
-    const currentPrice = productInfo && productInfo[currentSize][currentType].price;
-    const currentWeight = productInfo && productInfo[currentSize][currentType].weight;
+    const { id, imageUrl, title, composition, productInfo, price, weight } = product;
+    const currentPrice = productInfo?.[currentSize]?.[currentType].price || price;
+    const currentWeight = productInfo?.[currentSize]?.[currentType].weight || weight;
 
     const productId = useMemo(() => {
         return `${title}${currentType}${currentSize}${currentPrice}${currentWeight}`;

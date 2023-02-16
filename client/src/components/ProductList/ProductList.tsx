@@ -25,6 +25,8 @@ const ProductList = ({ products }: Props) => {
                         size={item.size}
                         type={item.type}
                         productInfo={item.productInfo}
+                        price={item.price}
+                        weight={item.weight}
                     />
                     // </li>
                 );
