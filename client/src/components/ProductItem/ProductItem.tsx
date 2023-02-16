@@ -27,9 +27,9 @@ const ProductItem = (product: IProductItem) => {
     const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false);
     const [counter, setCounter] = useState<number>(0);
 
-    const { id, imageUrl, title, composition, productInfo } = product;
-    const currentPrice = productInfo[currentSize][currentType].price;
-    const currentWeight = productInfo[currentSize][currentType].weight;
+    const { id, imageUrl, title, composition, productInfo, price, weight } = product;
+    const currentPrice = productInfo?.[currentSize]?.[currentType].price || price;
+    const currentWeight = productInfo?.[currentSize]?.[currentType].weight || weight;
 
     const productId = useMemo(() => {
         return `${title}${currentType}${currentSize}${currentPrice}${currentWeight}`;
@@ -44,23 +44,23 @@ const ProductItem = (product: IProductItem) => {
         }
     }, [currentProduct, currentProduct?.productCounter]);
 
-    const obj = {
-        id,
-        imageUrl,
-        title,
-        type: currentType,
-        size: currentSize,
-        price: currentPrice,
-        weight: currentWeight,
-        productId,
-        productCounter: 1,
-        composition,
-        productInfo,
-    };
-
     const onClick = () => {
         setCounter((prev) => prev + 1);
-        dispatch(addItemToBasket(obj as IBasketProductItem));
+        dispatch(
+            addItemToBasket({
+                id,
+                imageUrl,
+                title,
+                type: currentType,
+                size: currentSize,
+                price: currentPrice,
+                weight: currentWeight,
+                productId,
+                productCounter: 1,
+                composition,
+                productInfo,
+            } as IBasketProductItem),
+        );
     };
 
     const onRemoevItemClick = () => {

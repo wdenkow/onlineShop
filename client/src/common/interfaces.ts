@@ -49,11 +49,22 @@ export interface IProductItem {
     type: string;
     category: string;
     productInfo: IProductInfo;
+    productType?: string;
+    price?: number;
+    weight?: number;
 }
 
-export interface IBasketProductItem extends IProductItem {
-    price: number;
+export interface IBasketProductItem {
+    id: number;
+    imageUrl: string;
+    title: string;
+    composition: string;
+    size: string;
+    type: string;
+    category: string;
+    productInfo: IProductInfo;
     weight: string;
+    price: number;
     productId: string;
     productCounter: number;
     additionalProduct?: IAdditionalProduct;

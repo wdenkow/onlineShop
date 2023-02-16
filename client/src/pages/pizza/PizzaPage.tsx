@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from '../../components/ProductList';
 import ContentContainer from '../../components/ContentContainer';
-import { pizzas } from '../../common/mockedData';
 import Filter from '../../components/Filter';
 import TabPanel from '../../components/TabContent/TabContent';
 import { IProductItem } from '../../common/interfaces';
@@ -9,22 +8,35 @@ import { filterProductsByCategory } from '../../common/utils';
 
 import useStyles from './styles';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import {
+    getPizzasProducts,
+    getProductsByCategoryThunk,
+    ProductsEnum,
+} from '../../store/products/productsSlice';
 
 const PizzaPage = () => {
     const [filterValue, setFilterValue] = useState('popularity');
-    const [pizzasData, setPizzasData] = useState<IProductItem[]>([]);
-    const [categories, setCategories] = useState<Array<string> | []>([]);
+    const [categories, setCategories] = useState<Array<string>>([]);
     const { classes } = useStyles();
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+    const pizza = useAppSelector(getPizzasProducts);
 
     const [filteredProducts, setFilteredProducts] = useState<Array<IProductItem[]>>([]);
 
     useEffect(() => {
-        const { categories, productsByCategory } = filterProductsByCategory(pizzas);
+        const { categories, productsByCategory } = filterProductsByCategory(pizza);
 
-        setPizzasData(pizzas);
         setCategories(categories);
         setFilteredProducts(productsByCategory);
+    }, [filterValue]);
+
+    useEffect(() => {
+        // TODO change it later, it's not good enough
+        if (pizza.length === 0) {
+            dispatch(getProductsByCategoryThunk(ProductsEnum.PIZZA));
+        }
     }, []);
 
     return (
@@ -46,7 +58,7 @@ const PizzaPage = () => {
                 <Filter value={filterValue} onChange={setFilterValue} />
             </div>
             <TabPanel value={filterValue} panelName="popularity">
-                <ProductList products={pizzasData} />
+                <ProductList products={pizza} />
             </TabPanel>
             <TabPanel value={filterValue} panelName="categories">
                 {filteredProducts.map((product, index) => {
