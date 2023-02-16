@@ -30,6 +30,7 @@ const ProductItem = (product: IProductItem) => {
     const { id, imageUrl, title, composition, productInfo, price, weight } = product;
     const currentPrice = productInfo?.[currentSize]?.[currentType].price || price;
     const currentWeight = productInfo?.[currentSize]?.[currentType].weight || weight;
+    const ivSimpleProductCart = !!productInfo;
 
     const productId = useMemo(() => {
         return `${title}${currentType}${currentSize}${currentPrice}${currentWeight}`;
@@ -82,46 +83,51 @@ const ProductItem = (product: IProductItem) => {
                         <h3 className={cx(classes.title, isOpenDialog && classes.modalTitle)}>
                             {title}
                         </h3>
-                        <p
-                            className={cx(
-                                classes.composition,
-                                isOpenDialog && classes.modalComposition,
-                            )}
-                        >
-                            {composition}
-                        </p>
-                        <div className={classes.selects}>
-                            <SelectOS
-                                className={classes.select}
-                                options={PIZZA_SIZES}
-                                defaultValue="medium"
-                                onChange={setCurrentSize}
-                            />
-                            <SelectOS
-                                className={classes.select}
-                                value={currentType}
-                                options={PIZZA_TYPES}
-                                defaultValue="classic"
-                                onChange={setCurrentType}
-                            />
-                        </div>
-                        <div className={classes.additionalProducts}>
-                            {ADDITIONAL_PRODUCTS.map((product, i) => {
-                                const { id, imgUrl, price, title } = product;
-                                return (
-                                    <AdditionalProduct
-                                        productId={productId}
-                                        selectedType={currentType}
-                                        onClickAdd={setCurrentType}
-                                        key={i}
-                                        id={id}
-                                        imgUrl={imgUrl}
-                                        title={title}
-                                        price={price}
+                        {ivSimpleProductCart && (
+                            <>
+                                <p
+                                    className={cx(
+                                        classes.composition,
+                                        isOpenDialog && classes.modalComposition,
+                                    )}
+                                >
+                                    {composition}
+                                </p>
+                                <div className={classes.selects}>
+                                    <SelectOS
+                                        className={classes.select}
+                                        options={PIZZA_SIZES}
+                                        defaultValue="medium"
+                                        onChange={setCurrentSize}
                                     />
-                                );
-                            })}
-                        </div>
+                                    <SelectOS
+                                        className={classes.select}
+                                        value={currentType}
+                                        options={PIZZA_TYPES}
+                                        defaultValue="classic"
+                                        onChange={setCurrentType}
+                                    />
+                                </div>
+                                <div className={classes.additionalProducts}>
+                                    {ADDITIONAL_PRODUCTS.map((product, i) => {
+                                        const { id, imgUrl, price, title } = product;
+                                        return (
+                                            <AdditionalProduct
+                                                productId={productId}
+                                                selectedType={currentType}
+                                                onClickAdd={setCurrentType}
+                                                key={i}
+                                                id={id}
+                                                imgUrl={imgUrl}
+                                                title={title}
+                                                price={price}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            </>
+                        )}
+
                         <div className={classes.bottomContent}>
                             <div>
                                 <p className={classes.price}>{currentPrice}</p>
@@ -154,39 +160,43 @@ const ProductItem = (product: IProductItem) => {
                 </button>
                 <div className={classes.content}>
                     <h3 className={classes.title}>{t(title)}</h3>
-                    <p className={classes.composition}>{t(composition)}</p>
-                    <div className={classes.selects}>
-                        <SelectOS
-                            className={classes.select}
-                            options={PIZZA_SIZES}
-                            defaultValue="medium"
-                            onChange={setCurrentSize}
-                        />
-                        <SelectOS
-                            className={classes.select}
-                            value={currentType}
-                            options={PIZZA_TYPES}
-                            defaultValue="classic"
-                            onChange={setCurrentType}
-                        />
-                    </div>
-                    <div className={classes.additionalProducts}>
-                        {ADDITIONAL_PRODUCTS.map((product, i) => {
-                            const { id, imgUrl, price, title } = product;
-                            return (
-                                <AdditionalProduct
-                                    productId={productId}
-                                    selectedType={currentType}
-                                    onClickAdd={setCurrentType}
-                                    key={i}
-                                    id={id}
-                                    imgUrl={imgUrl}
-                                    title={title}
-                                    price={price}
+                    {ivSimpleProductCart && (
+                        <>
+                            <p className={classes.composition}>{t(composition)}</p>
+                            <div className={classes.selects}>
+                                <SelectOS
+                                    className={classes.select}
+                                    options={PIZZA_SIZES}
+                                    defaultValue="medium"
+                                    onChange={setCurrentSize}
                                 />
-                            );
-                        })}
-                    </div>
+                                <SelectOS
+                                    className={classes.select}
+                                    value={currentType}
+                                    options={PIZZA_TYPES}
+                                    defaultValue="classic"
+                                    onChange={setCurrentType}
+                                />
+                            </div>
+                            <div className={classes.additionalProducts}>
+                                {ADDITIONAL_PRODUCTS.map((product, i) => {
+                                    const { id, imgUrl, price, title } = product;
+                                    return (
+                                        <AdditionalProduct
+                                            productId={productId}
+                                            selectedType={currentType}
+                                            onClickAdd={setCurrentType}
+                                            key={i}
+                                            id={id}
+                                            imgUrl={imgUrl}
+                                            title={title}
+                                            price={price}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </>
+                    )}
                     <div className={classes.bottomContent}>
                         <div>
                             <p className={classes.price}>
