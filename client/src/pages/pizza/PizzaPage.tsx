@@ -40,7 +40,7 @@ const PizzaPage = () => {
     }, []);
 
     return (
-        <ContentContainer className={classes.container}>
+        <ContentContainer isOnMainPage>
             <div className={classes.filterContainer}>
                 <div className={classes.categories}>
                     <h1>{t('product.pizza')}</h1>

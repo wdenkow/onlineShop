@@ -18,7 +18,4 @@ export default makeStyles()((theme) => ({
             flexDirection: 'row',
         },
     },
-    container: {
-        // paddingBottom: '60px',
-    },
 }));
