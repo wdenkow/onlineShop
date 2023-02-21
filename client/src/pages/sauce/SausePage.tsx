@@ -20,7 +20,7 @@ const SaucePage = () => {
     }, []);
 
     return (
-        <ContentContainer>
+        <ContentContainer isOnMainPage>
             <h1>SaucePage page</h1>
             <div>
                 <ProductList products={sauces} />
