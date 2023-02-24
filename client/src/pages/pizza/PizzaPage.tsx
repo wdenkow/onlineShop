@@ -14,6 +14,7 @@ import {
     getProductsByCategoryThunk,
     ProductsEnum,
 } from '../../store/products/productsSlice';
+import { FILTER_TABS } from '../../common/mockedData';
 
 const PizzaPage = () => {
     const [filterValue, setFilterValue] = useState('popularity');
@@ -55,7 +56,7 @@ const PizzaPage = () => {
                             );
                         })} */}
                 </div>
-                <Filter value={filterValue} onChange={setFilterValue} />
+                <Filter tabs={FILTER_TABS} value={filterValue} onChange={setFilterValue} />
             </div>
             <TabPanel value={filterValue} panelName="popularity">
                 <ProductList products={pizza} />

@@ -1,39 +1,36 @@
-import React from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import { string, object, boolean } from 'yup';
 import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { PatternFormat } from 'react-number-format';
-import SelectOS from '../../../../components/SelectOS';
-import { PAYMENT_METHODS, SHOPS } from '../../../../common/mockedData';
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
-import { clearBasket, getTotalItems } from '../../../../store/basket/basketSlice';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { clearBasket, getTotalItems } from '../../../store/basket/basketSlice';
+import SelectOS from '../../SelectOS';
+import { PAYMENT_METHODS, SHOPS } from '../../../common/mockedData';
 
-import useStyles from './styles';
+import { useFormStyles } from '../formStyles';
 
-const schema = yup.object({
-    street: yup
-        .string()
+const schema = object({
+    street: string()
         .min(1, 'Min 1 character')
         .max(10, 'Max 10 characterss')
         .required('This is required field'),
-    houseNumber: yup
-        .string()
+    houseNumber: string()
         .min(1, 'Min 1 character')
         .max(10, 'Max 10 characterss')
         .required('This is required field'),
-    flatNumber: yup.string().max(10, 'Max 10 characterss'),
-    floorNumber: yup.string().max(10, 'Max 10 characterss'),
-    doorKey: yup.string().max(10, 'Max 10 characterss'),
-    entrance: yup.string().max(10, 'Max 10 characterss'),
-    phoneNumber: yup.string().required(),
-    email: yup.string().email().max(20, 'Max 20 characterss'),
-    coupon: yup.string().max(6, 'Max 6 characterss'),
-    orderDate: yup.string(),
-    comment: yup.string().max(2000, 'Max 2000 characterss'),
-    paymentMethod: yup.string(),
-    isPublicOffer: yup.boolean().isTrue(),
-    isPersonalOffer: yup.boolean().isTrue(),
+    flatNumber: string().max(10, 'Max 10 characterss'),
+    floorNumber: string().max(10, 'Max 10 characterss'),
+    doorKey: string().max(10, 'Max 10 characterss'),
+    entrance: string().max(10, 'Max 10 characterss'),
+    phoneNumber: string().required(),
+    email: string().email().max(20, 'Max 20 characterss'),
+    coupon: string().max(6, 'Max 6 characterss'),
+    orderDate: string(),
+    comment: string().max(2000, 'Max 2000 characterss'),
+    paymentMethod: string(),
+    isPublicOffer: boolean().isTrue(),
+    isPersonalOffer: boolean().isTrue(),
 });
 
 interface PayFofmFields {
@@ -72,8 +69,8 @@ const defaultFormValues: PayFofmFields = {
     isPersonalOffer: true,
 };
 
-export const PayForm = () => {
-    const { classes } = useStyles();
+const PayForm = () => {
+    const { classes } = useFormStyles();
     const totalItems = useAppSelector(getTotalItems);
     const dispatch = useAppDispatch();
     const {
@@ -101,7 +98,7 @@ export const PayForm = () => {
             <Controller
                 name="city"
                 control={control}
-                render={({ field: { onChange, value, name } }) => {
+                render={({ field: { onChange, value } }) => {
                     return (
                         <SelectOS
                             className={classes.selectContainer}
@@ -358,10 +355,11 @@ export const PayForm = () => {
                             label="принять условия публичной оферты"
                             control={
                                 <Checkbox
+                                    required
                                     className={classes.checkbox}
                                     checked={value}
                                     onChange={onChange}
-                                    value=""
+                                    value={value}
                                 />
                             }
                         />
@@ -377,10 +375,11 @@ export const PayForm = () => {
                             label="принять условия положения об обработке и защите персональных данных"
                             control={
                                 <Checkbox
+                                    required
                                     className={classes.checkbox}
                                     checked={value}
                                     onChange={onChange}
-                                    value=""
+                                    value={value}
                                 />
                             }
                         />
@@ -390,3 +389,5 @@ export const PayForm = () => {
         </form>
     );
 };
+
+export default PayForm;

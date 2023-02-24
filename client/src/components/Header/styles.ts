@@ -60,6 +60,24 @@ export default makeStyles()((theme) => ({
         padding: '24px 0',
         borderTop: '1px solid #ebeced',
     },
+    signInForm: {
+        '& .MuiDialog-paper': {
+            textAlign: 'center',
+            padding: '20px 0',
+        },
+    },
+    additionalLinks: {
+        backgroundColor: 'white',
+    },
+    additionalLink: {
+        color: theme.palette.customColors.blue,
+        lineHeight: '16px',
+        fontSize: '16px',
+        margin: '8px 0',
+        '&:hover': {
+            cursor: 'pointer',
+        },
+    },
     laptopHeader: {
         display: 'none',
         [theme.breakpoints.up('lg')]: {

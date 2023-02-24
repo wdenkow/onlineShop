@@ -8,7 +8,8 @@ import { theme } from './styles/theme';
 import PizzaPage from './pages/pizza';
 import SaucePage from './pages/sauce';
 import Basket from './pages/Basket';
-import { PayForm } from './pages/Basket/components/PayForm/PayForm';
+import AuthPage from './pages/Auth';
+import PayForm from './components/Forms/PayForm';
 
 export default function App() {
     return (
@@ -29,6 +30,9 @@ export default function App() {
                         <Route exact path="/basket-order">
                             <PayForm />
                             {/* TODO add icon for returning to /basket */}
+                        </Route>
+                        <Route exact path="/auth">
+                            <AuthPage />
                         </Route>
                         <Route exact path="/">
                             <PizzaPage />

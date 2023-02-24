@@ -2,9 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import BasketProduct from '../../components/BasketProduct';
 import ContentContainer from '../../components/ContentContainer';
+import PayForm from '../../components/Forms/PayForm';
 import { getOrderList } from '../../store/basket/basketSlice';
 import { useAppSelector } from '../../store/hooks';
-import { PayForm } from './components/PayForm/PayForm';
 
 import useStyles from './styles';
 
