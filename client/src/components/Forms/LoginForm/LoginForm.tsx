@@ -2,6 +2,7 @@ import { TextField } from '@mui/material';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { string, object } from 'yup';
+import { useTranslation } from 'react-i18next';
 
 import { useFormStyles } from '../formStyles';
 
@@ -26,6 +27,7 @@ const LoginForm = () => {
         defaultValues: initialState,
         resolver: yupResolver(LoginFormSchema),
     });
+    const { t } = useTranslation();
 
     const onSubmitForm: SubmitHandler<ILoginForm> = (data) => {
         console.log('data', data);
@@ -40,7 +42,7 @@ const LoginForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Email"
+                            label={t('form.email')}
                             variant="standard"
                             value={value}
                             onChange={onChange}
@@ -58,7 +60,7 @@ const LoginForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Password"
+                            label={t('form.password')}
                             variant="standard"
                             type="password"
                             value={value}
@@ -70,7 +72,9 @@ const LoginForm = () => {
                     );
                 }}
             />
-            <input className={classes.submitBtn} type="submit" value="Login" />
+            <button className={classes.submitBtn} type="submit">
+                {t('logIn')}
+            </button>
         </form>
     );
 };

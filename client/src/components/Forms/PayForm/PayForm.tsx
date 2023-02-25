@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { clearBasket, getTotalItems } from '../../../store/basket/basketSlice';
 import SelectOS from '../../SelectOS';
 import { PAYMENT_METHODS, SHOPS } from '../../../common/mockedData';
+import { useTranslation } from 'react-i18next';
 
 import { useFormStyles } from '../formStyles';
 
@@ -82,6 +83,8 @@ const PayForm = () => {
         mode: 'onChange',
         resolver: yupResolver(schema),
     });
+    const { t } = useTranslation();
+
     const isDisableSubmit = totalItems > 0;
 
     const onSubmit: SubmitHandler<PayFofmFields> = (data) => {
@@ -94,7 +97,7 @@ const PayForm = () => {
 
     return (
         <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-            <h3>Aдрес доставки:</h3>
+            <h3>{t('form.label.adress')}</h3>
             <Controller
                 name="city"
                 control={control}
@@ -118,7 +121,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Улица"
+                            label={t('form.street')}
                             required
                             name={name}
                             onBlur={onBlur}
@@ -137,7 +140,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Номер дома"
+                            label={t('form.houseNumber')}
                             required
                             name={name}
                             onBlur={onBlur}
@@ -156,7 +159,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Квартира"
+                            label={t('form.flatNumber')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -174,7 +177,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Этаж"
+                            label={t('form.floorNumber')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -192,7 +195,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Подъезд"
+                            label={t('form.doorKey')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -210,7 +213,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Код двери"
+                            label={t('form.entrance')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -221,7 +224,7 @@ const PayForm = () => {
                     );
                 }}
             />
-            <h3>Информация</h3>
+            <h3>{t('form.label.payInfo')}</h3>
             <Controller
                 name="phoneNumber"
                 control={control}
@@ -229,7 +232,7 @@ const PayForm = () => {
                     return (
                         <PatternFormat
                             required
-                            label="Телефон"
+                            label={t('form.phone')}
                             className={classes.input}
                             name={name}
                             onBlur={onBlur}
@@ -251,7 +254,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Email"
+                            label={t('form.email')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -269,7 +272,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Дата"
+                            label={t('form.orderDate')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -287,7 +290,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Есть купон/промокод?"
+                            label={t('form.coupon')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -305,7 +308,7 @@ const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Ваш комментарий"
+                            label={t('form.comment')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -316,7 +319,7 @@ const PayForm = () => {
                     );
                 }}
             />
-            <h3>Способ оплаты</h3>
+            <h3>{t('form.label.payMethod')}</h3>
             <Controller
                 name="paymentMethod"
                 control={control}
@@ -334,9 +337,7 @@ const PayForm = () => {
                 }}
             />
             {submitCount > 1 && !isDisableSubmit && (
-                <p
-                    className={classes.error}
-                >{`У вас нет активных заказов. Количество товаров в корзине: ${totalItems}`}</p>
+                <p className={classes.error}>{t('form.error.noOrders', { totalItems })}</p>
             )}
             {errors?.isPersonalOffer?.message && (
                 <p className={classes.error}>{errors?.isPersonalOffer?.message}</p>
@@ -344,7 +345,9 @@ const PayForm = () => {
             {errors?.isPublicOffer?.message && (
                 <p className={classes.error}>{errors?.isPublicOffer?.message}</p>
             )}
-            <input className={classes.submitBtn} type="submit" value="send data" />
+            <button className={classes.submitBtn} type="submit">
+                {t('form.sendPayForm')}
+            </button>
 
             <Controller
                 name="isPublicOffer"
@@ -352,7 +355,7 @@ const PayForm = () => {
                 render={({ field: { onChange, value } }) => {
                     return (
                         <FormControlLabel
-                            label="принять условия публичной оферты"
+                            label={t('form.accessPublickOffer')}
                             control={
                                 <Checkbox
                                     required
@@ -372,7 +375,7 @@ const PayForm = () => {
                 render={({ field: { onChange, value } }) => {
                     return (
                         <FormControlLabel
-                            label="принять условия положения об обработке и защите персональных данных"
+                            label={t('form.accesPersonalData')}
                             control={
                                 <Checkbox
                                     required

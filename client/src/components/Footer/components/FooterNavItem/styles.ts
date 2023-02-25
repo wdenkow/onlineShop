@@ -1,7 +1,7 @@
 import { makeStyles } from 'tss-react/mui';
 
 // TODO check color and move their to theme.colors
-export default makeStyles()((theme) => ({
+export default makeStyles()(() => ({
     navigationItem: {
         paddingRight: '32px',
     },

@@ -2,6 +2,7 @@ import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { string, object, boolean } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslation } from 'react-i18next';
 
 import { useFormStyles } from '../formStyles';
 
@@ -31,6 +32,7 @@ const initialState: IRegisterForm = {
 
 const RegisterForm = () => {
     const { classes } = useFormStyles();
+    const { t } = useTranslation();
 
     const { control, handleSubmit } = useForm<IRegisterForm>({
         defaultValues: initialState,
@@ -104,7 +106,7 @@ const RegisterForm = () => {
                 render={({ field: { onChange, value } }) => {
                     return (
                         <FormControlLabel
-                            label="принять условия публичной оферты"
+                            label={t('form.accessPublickOffer')}
                             control={
                                 <Checkbox
                                     required
@@ -123,7 +125,7 @@ const RegisterForm = () => {
                 render={({ field: { onChange, value } }) => {
                     return (
                         <FormControlLabel
-                            label="принять условия положения об обработке и защите персональных данных"
+                            label={t('form.accesPersonalData')}
                             control={
                                 <Checkbox
                                     required
@@ -136,7 +138,9 @@ const RegisterForm = () => {
                     );
                 }}
             />
-            <input className={classes.submitBtn} type="submit" value="Зарегистрироваться" />
+            <button className={classes.submitBtn} type="submit">
+                {t('form.text.register')}
+            </button>
         </form>
     );
 };

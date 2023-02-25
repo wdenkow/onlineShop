@@ -1,8 +1,4 @@
-import Fiesta from '../assets/images/products/pizzas/fiesta.png';
-import Bolonieze from '../assets/images/products/pizzas/bolonieze.png';
-import Mitbollo from '../assets/images/products/pizzas/mitbollo.png';
-import FourSeasons from '../assets/images/products/pizzas/4_sezona.png';
-import { IAdditionalProduct, IProductItem, ISelectOption, ITabPanel } from './interfaces';
+import { IAdditionalProduct, ISelectOption, ITabPanel } from './interfaces';
 
 import HotDogBoard from '../assets/images/products/additionalProducs/hot-dog-board.png';
 import CheeseBoard from '../assets/images/products/additionalProducs/cheese-board.png';
@@ -240,7 +236,7 @@ export const SHOPS: Array<ISelectOption> = [
     {
         id: 2,
         value: 'grodno',
-        label: 'city. grodno',
+        label: 'city.grodno',
     },
 ];
 
@@ -248,17 +244,17 @@ export const PAYMENT_METHODS: Array<ISelectOption> = [
     {
         id: 1,
         value: 'credit-card-online',
-        label: 'Картой (на сайте)',
+        label: 'form.payMethod.creditCardOnlice',
     },
     {
         id: 2,
         value: 'cash',
-        label: 'Наличными',
+        label: 'form.payMethod.cash',
     },
     {
         id: 3,
         value: 'credit-card',
-        label: 'Картой курьеру',
+        label: 'form.payMethod.creditCard',
     },
 ];
 

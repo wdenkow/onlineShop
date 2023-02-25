@@ -5,9 +5,40 @@
     "lang.en": "English",
 
     "city.minsk": "Minsk",
-    "city. grodno": "Grodno",
+    "city.grodno": "Grodno",
 
     "delivery.30min": "30 minutes delivery",
+
+    "form.email": "Email",
+    "form.password": "Password",
+    "form.street": "Street",
+    "form.houseNumber": "House",
+    "form.flatNumber": "Apartament",
+    "form.floorNumber": "Floor",
+    "form.doorKey": "Entrance",
+    "form.entrance": "Entrance code",
+    "form.phone": "Phone",
+    "form.orderDate": "Delivery date",
+    "form.coupon": "Discount coupon/promo code?",
+    "form.comment": "Comment",
+    "form.sendPayForm": "Submit",
+    "form.accessPublickOffer": "accept public offert",
+    "form.accesPersonalData": "accept the terms of the regulation on the processing and protection of personal data",
+
+    "form.label.adress": "Delivery address:",
+    "form.label.payInfo": "Information:",
+    "form.label.payMethod": "Paymend method:",
+
+    "form.text.forgotPass": "Forgot your password?",
+    "form.text.register": "Sign up",
+    "form.text.resetPassword": "Reset password",
+    "form.text.backToLogin": "Back to authorization",
+
+    "form.error.noOrders": "You don't no haveactive orders. Count items in cart: {{totalItems}}",
+
+    "form.payMethod.creditCardOnlice": "Card (online)",
+    "form.payMethod.cash": "Cash",
+    "form.payMethod.creditCard": "Card (courier)",
 
     "footer.clientsPerMons": "Clients per month",
     "footer.ourShops": "Restaurants in Belarus",

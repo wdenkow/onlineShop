@@ -44,13 +44,13 @@ const LaptopHeader = () => {
                         className={classes.additionalLink}
                         onClick={() => setCurrentContent('restorePassword')}
                     >
-                        Забыли пароль?
+                        {t('form.text.forgotPass')}
                     </p>
                     <p
                         className={classes.additionalLink}
                         onClick={() => setCurrentContent('registation')}
                     >
-                        Зарегистрироваться
+                        {t('form.text.register')}
                     </p>
                 </div>
             </>
@@ -67,7 +67,7 @@ const LaptopHeader = () => {
                         className={classes.additionalLink}
                         onClick={() => setCurrentContent('login')}
                     >
-                        Использовать существующий аккаунт
+                        {t('form.text.backToLogin')}
                     </p>
                 </div>
             </>
@@ -84,13 +84,13 @@ const LaptopHeader = () => {
                         className={classes.additionalLink}
                         onClick={() => setCurrentContent('login')}
                     >
-                        Вернуться к авторизации
+                        {t('form.text.backToLogin')}
                     </p>
                     <p
                         className={classes.additionalLink}
                         onClick={() => setCurrentContent('registation')}
                     >
-                        Зарегистрироваться
+                        {t('form.text.register')}
                     </p>
                 </div>
             </>

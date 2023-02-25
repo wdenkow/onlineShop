@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { TextField } from '@mui/material';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { string, object } from 'yup';
 
 import { useFormStyles } from '../formStyles';
@@ -19,6 +20,7 @@ const initialState: IRestorePasswordForm = {
 
 const RestorePasswordForm = () => {
     const { classes } = useFormStyles();
+    const { t } = useTranslation();
 
     const { control, handleSubmit } = useForm<IRestorePasswordForm>({
         defaultValues: initialState,
@@ -49,7 +51,9 @@ const RestorePasswordForm = () => {
                     );
                 }}
             />
-            <input className={classes.submitBtn} type="submit" value="Сбросить пароль" />
+            <button className={classes.submitBtn} type="submit">
+                {t('form.text.resetPassword')}
+            </button>
         </form>
     );
 };
