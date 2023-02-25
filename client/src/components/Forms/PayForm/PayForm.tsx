@@ -1,39 +1,37 @@
-import React from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import { string, object, boolean } from 'yup';
 import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { PatternFormat } from 'react-number-format';
-import SelectOS from '../../../../components/SelectOS';
-import { PAYMENT_METHODS, SHOPS } from '../../../../common/mockedData';
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
-import { clearBasket, getTotalItems } from '../../../../store/basket/basketSlice';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { clearBasket, getTotalItems } from '../../../store/basket/basketSlice';
+import SelectOS from '../../SelectOS';
+import { PAYMENT_METHODS, SHOPS } from '../../../common/mockedData';
+import { useTranslation } from 'react-i18next';
 
-import useStyles from './styles';
+import { useFormStyles } from '../formStyles';
 
-const schema = yup.object({
-    street: yup
-        .string()
+const schema = object({
+    street: string()
         .min(1, 'Min 1 character')
         .max(10, 'Max 10 characterss')
         .required('This is required field'),
-    houseNumber: yup
-        .string()
+    houseNumber: string()
         .min(1, 'Min 1 character')
         .max(10, 'Max 10 characterss')
         .required('This is required field'),
-    flatNumber: yup.string().max(10, 'Max 10 characterss'),
-    floorNumber: yup.string().max(10, 'Max 10 characterss'),
-    doorKey: yup.string().max(10, 'Max 10 characterss'),
-    entrance: yup.string().max(10, 'Max 10 characterss'),
-    phoneNumber: yup.string().required(),
-    email: yup.string().email().max(20, 'Max 20 characterss'),
-    coupon: yup.string().max(6, 'Max 6 characterss'),
-    orderDate: yup.string(),
-    comment: yup.string().max(2000, 'Max 2000 characterss'),
-    paymentMethod: yup.string(),
-    isPublicOffer: yup.boolean().isTrue(),
-    isPersonalOffer: yup.boolean().isTrue(),
+    flatNumber: string().max(10, 'Max 10 characterss'),
+    floorNumber: string().max(10, 'Max 10 characterss'),
+    doorKey: string().max(10, 'Max 10 characterss'),
+    entrance: string().max(10, 'Max 10 characterss'),
+    phoneNumber: string().required(),
+    email: string().email().max(20, 'Max 20 characterss'),
+    coupon: string().max(6, 'Max 6 characterss'),
+    orderDate: string(),
+    comment: string().max(2000, 'Max 2000 characterss'),
+    paymentMethod: string(),
+    isPublicOffer: boolean().isTrue(),
+    isPersonalOffer: boolean().isTrue(),
 });
 
 interface PayFofmFields {
@@ -72,8 +70,8 @@ const defaultFormValues: PayFofmFields = {
     isPersonalOffer: true,
 };
 
-export const PayForm = () => {
-    const { classes } = useStyles();
+const PayForm = () => {
+    const { classes } = useFormStyles();
     const totalItems = useAppSelector(getTotalItems);
     const dispatch = useAppDispatch();
     const {
@@ -85,6 +83,8 @@ export const PayForm = () => {
         mode: 'onChange',
         resolver: yupResolver(schema),
     });
+    const { t } = useTranslation();
+
     const isDisableSubmit = totalItems > 0;
 
     const onSubmit: SubmitHandler<PayFofmFields> = (data) => {
@@ -97,11 +97,11 @@ export const PayForm = () => {
 
     return (
         <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-            <h3>Aдрес доставки:</h3>
+            <h3>{t('form.label.adress')}</h3>
             <Controller
                 name="city"
                 control={control}
-                render={({ field: { onChange, value, name } }) => {
+                render={({ field: { onChange, value } }) => {
                     return (
                         <SelectOS
                             className={classes.selectContainer}
@@ -121,7 +121,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Улица"
+                            label={t('form.street')}
                             required
                             name={name}
                             onBlur={onBlur}
@@ -140,7 +140,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Номер дома"
+                            label={t('form.houseNumber')}
                             required
                             name={name}
                             onBlur={onBlur}
@@ -159,7 +159,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Квартира"
+                            label={t('form.flatNumber')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -177,7 +177,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Этаж"
+                            label={t('form.floorNumber')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -195,7 +195,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Подъезд"
+                            label={t('form.doorKey')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -213,7 +213,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Код двери"
+                            label={t('form.entrance')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -224,7 +224,7 @@ export const PayForm = () => {
                     );
                 }}
             />
-            <h3>Информация</h3>
+            <h3>{t('form.label.payInfo')}</h3>
             <Controller
                 name="phoneNumber"
                 control={control}
@@ -232,7 +232,7 @@ export const PayForm = () => {
                     return (
                         <PatternFormat
                             required
-                            label="Телефон"
+                            label={t('form.phone')}
                             className={classes.input}
                             name={name}
                             onBlur={onBlur}
@@ -254,7 +254,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Email"
+                            label={t('form.email')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -272,7 +272,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Дата"
+                            label={t('form.orderDate')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -290,7 +290,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Есть купон/промокод?"
+                            label={t('form.coupon')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -308,7 +308,7 @@ export const PayForm = () => {
                     return (
                         <TextField
                             className={classes.input}
-                            label="Ваш комментарий"
+                            label={t('form.comment')}
                             name={name}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -319,7 +319,7 @@ export const PayForm = () => {
                     );
                 }}
             />
-            <h3>Способ оплаты</h3>
+            <h3>{t('form.label.payMethod')}</h3>
             <Controller
                 name="paymentMethod"
                 control={control}
@@ -337,9 +337,7 @@ export const PayForm = () => {
                 }}
             />
             {submitCount > 1 && !isDisableSubmit && (
-                <p
-                    className={classes.error}
-                >{`У вас нет активных заказов. Количество товаров в корзине: ${totalItems}`}</p>
+                <p className={classes.error}>{t('form.error.noOrders', { totalItems })}</p>
             )}
             {errors?.isPersonalOffer?.message && (
                 <p className={classes.error}>{errors?.isPersonalOffer?.message}</p>
@@ -347,7 +345,9 @@ export const PayForm = () => {
             {errors?.isPublicOffer?.message && (
                 <p className={classes.error}>{errors?.isPublicOffer?.message}</p>
             )}
-            <input className={classes.submitBtn} type="submit" value="send data" />
+            <button className={classes.submitBtn} type="submit">
+                {t('form.sendPayForm')}
+            </button>
 
             <Controller
                 name="isPublicOffer"
@@ -355,13 +355,14 @@ export const PayForm = () => {
                 render={({ field: { onChange, value } }) => {
                     return (
                         <FormControlLabel
-                            label="принять условия публичной оферты"
+                            label={t('form.accessPublickOffer')}
                             control={
                                 <Checkbox
+                                    required
                                     className={classes.checkbox}
                                     checked={value}
                                     onChange={onChange}
-                                    value=""
+                                    value={value}
                                 />
                             }
                         />
@@ -374,13 +375,14 @@ export const PayForm = () => {
                 render={({ field: { onChange, value } }) => {
                     return (
                         <FormControlLabel
-                            label="принять условия положения об обработке и защите персональных данных"
+                            label={t('form.accesPersonalData')}
                             control={
                                 <Checkbox
+                                    required
                                     className={classes.checkbox}
                                     checked={value}
                                     onChange={onChange}
-                                    value=""
+                                    value={value}
                                 />
                             }
                         />
@@ -390,3 +392,5 @@ export const PayForm = () => {
         </form>
     );
 };
+
+export default PayForm;

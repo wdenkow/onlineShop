@@ -1,6 +1,6 @@
 import { makeStyles } from 'tss-react/mui';
 
-export default makeStyles()((theme) => ({
+export const useFormStyles = makeStyles()((theme) => ({
     form: {
         display: 'flex',
         flexDirection: 'column',
@@ -39,6 +39,9 @@ export default makeStyles()((theme) => ({
         fontSize: '14px',
         lineHeight: '16px',
         fontWeight: 400,
+        '&:hover': {
+            cursor: 'pointer',
+        },
     },
     checkbox: {},
     error: {

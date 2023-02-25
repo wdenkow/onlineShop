@@ -1,7 +1,6 @@
 import React from 'react';
 import { FOOTER_INFO_ITEMS } from './utils/utils';
-import FooterNavigationBlock from './components/FooterNavBlock/FooterNavBlock';
-import { FOOD_ROUTES, FOOTER_NAV_ITEMS } from '../../common/FOOD_ROUTES';
+import { FOOD_ROUTES } from '../../common/FOOD_ROUTES';
 import FooterInfoBlock from './components/FooterInfoBlock';
 import FoodNavigation from './components/FoodNavigation';
 

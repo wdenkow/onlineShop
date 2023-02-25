@@ -14,15 +14,16 @@ interface Props {
     children: React.ReactNode;
     open: boolean;
     setIsOpen: (value: boolean) => void;
+    className?: string;
 }
 
-const DialogOS = ({ open, setIsOpen, children }: Props) => {
-    const { classes } = useStyles();
+const DialogOS = ({ open, setIsOpen, children, className }: Props) => {
+    const { classes, cx } = useStyles();
 
     const handleClose = () => setIsOpen(false);
 
     return (
-        <Dialog className={classes.dialog} open={open} onClose={handleClose}>
+        <Dialog className={cx(classes.dialog, className)} open={open} onClose={handleClose}>
             {children}
         </Dialog>
     );

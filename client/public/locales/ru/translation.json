@@ -5,9 +5,40 @@
     "lang.en": "Английский",
 
     "city.minsk": "Минск",
-    "city. grodno": "Гродно",
+    "city.grodno": "Гродно",
 
     "delivery.30min": "30 минут доставка",
+
+    "form.email": "Email",
+    "form.password": "Пароль",
+    "form.street": "Улица",
+    "form.houseNumber": "Номер дома",
+    "form.flatNumber": "Квартира",
+    "form.floorNumber": "Этаж",
+    "form.doorKey": "Подъезд",
+    "form.entrance": "Код двери",
+    "form.phone": "Телефон",
+    "form.orderDate": "Дата",
+    "form.coupon": "Есть купон/промокод?",
+    "form.comment": "Ваш комментарий",
+    "form.sendPayForm": "Отправить",
+    "form.accessPublickOffer": "принять условия публичной оферты",
+    "form.accesPersonalData": "принять условия положения об обработке и защите персональных данных",
+
+    "form.label.adress": "Aдрес доставки:",
+    "form.label.payInfo": "Информация:",
+    "form.label.payMethod": "Способ оплаты:",
+
+    "form.text.forgotPass": "Забыли пароль?",
+    "form.text.register": "Зарегистрироваться",
+    "form.text.resetPassword": " Восстановить пароль",
+    "form.text.backToLogin": "Вернуться к авторизации",
+
+    "form.error.noOrders": "У вас нет активных заказов. Количество товаров в корзине:  {{totalItems}}",
+
+    "form.payMethod.creditCardOnlice": "Картой (на сайте)",
+    "form.payMethod.cash": "Наличными",
+    "form.payMethod.creditCard": "Картой курьеру",
 
     "footer.clientsPerMons": "Клиентов в месяц",
     "footer.ourShops": "Пиццерии",

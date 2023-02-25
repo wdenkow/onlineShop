@@ -7,7 +7,7 @@ interface TabPanelProps {
 }
 
 const TabPanel = ({ panelName, value, children }: TabPanelProps) => {
-    return panelName === value ? <div>{children}</div> : null;
+    return panelName === value ? <>{children}</> : null;
 };
 
 export default TabPanel;
